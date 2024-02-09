@@ -29,3 +29,11 @@
     ]
 
 # npm install react-icons
+# cd .. ("aller à la racine du projet"), npm init -y ("création du package.json"), npm install express
+# node api/index.js (pour lancer le serveur express mais on va le modifier avec le script 'dev' dans package.json)
+# npm install nodemon
+    "scripts": {
+        "dev": "nodemon api/index.js",
+        "start": "node api/index.js"
+    }
+    npm run dev (va lancer le serveur avec le script nodemon)
