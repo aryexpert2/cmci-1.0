@@ -1,0 +1,21 @@
+```
+# npm create vite@latest (pour créer un projet vite)
+# client, React, JavaScript + SWC
+# cd client, npm i
+# tailwindcss vite
+    npm install -D tailwindcss postcss autoprefixer
+    npx tailwindcss init -p
+   
+    dans tailwind.config.js => 
+        content: [
+            "./index.html",
+            "./src/**/*.{js,ts,jsx,tsx}",
+        ],
+
+    dans index.css => 
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+# npm run dev (pour lancer le serveur vite)
+
