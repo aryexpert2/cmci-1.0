@@ -37,3 +37,10 @@
         "start": "node api/index.js"
     }
     npm run dev (va lancer le serveur avec le script nodemon)
+
+# npm install mongoose
+# npm install dotenv ("permet à l'application de lire les variables d'environnement à partir d'un fichier .env")
+    dans api/index.js => 
+        import dotenv from 'dotenv';
+        dotenv.config();
+      

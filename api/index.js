@@ -1,4 +1,18 @@
 import express from "express";
+import { mongoose } from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+mongoose
+  .connect(
+    process.env.MONGO // on utilise la variable d'environnement MONGO pour la connexion à la base de données
+  )
+  .then(() => {
+    console.log("Connected to database successfully");
+  }).catch((error) => {
+    console.log(error);
+  });
 
 const app = express();
 
