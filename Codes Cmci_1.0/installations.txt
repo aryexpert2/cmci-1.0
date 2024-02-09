@@ -19,3 +19,13 @@
 
 # npm run dev (pour lancer le serveur vite)
 # npm install react-router-dom
+
+# npm i flowbite-react
+    plugins: [
+        require('flowbite/plugin'),
+    ]
+    content: [
+        'node_modules/flowbite-react/lib/esm/**/*.js',
+    ]
+
+# npm install react-icons
