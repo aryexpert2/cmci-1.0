@@ -38,6 +38,7 @@
     }
     npm run dev (va lancer le serveur avec le script nodemon)
 
+# déplacer .gitignore à la racine et y ajouter .env
 # npm install mongoose
 # npm install dotenv ("permet à l'application de lire les variables d'environnement à partir d'un fichier .env")
     dans api/index.js => 
