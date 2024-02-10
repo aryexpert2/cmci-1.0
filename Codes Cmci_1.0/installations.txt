@@ -27,11 +27,13 @@
     content: [
         'node_modules/flowbite-react/lib/esm/**/*.js',
     ]
-
 # npm install react-icons
-# cd .. ("aller à la racine du projet"), npm init -y ("création du package.json"), npm install express
+
+# cd .. ("aller à la racine du projet"), 
+# npm init -y ("création du package.json"), 
+# npm install express
 # node api/index.js (pour lancer le serveur express mais on va le modifier avec le script 'dev' dans package.json)
-# npm install nodemon
+# npm install nodemon => ("pour que le serveur se relance automatiquement à chaque modification")
     "scripts": {
         "dev": "nodemon api/index.js",
         "start": "node api/index.js"
@@ -46,4 +48,13 @@
         dotenv.config();
 
 # npm install bcryptjs ("pour crypter les mots de passe")
+# modifier vite.config.js => "pour que le serveur vite(front) puisse communiquer avec le serveur express(back)"
+    server: {
+        proxy: {
+        "/api": {
+            target: "http://localhost:3000",
+            secure: false, // car la requete est en http et non en https
+        },
+        },
+    },
       
