@@ -44,4 +44,6 @@
     dans api/index.js => 
         import dotenv from 'dotenv';
         dotenv.config();
+
+# npm install bcryptjs ("pour crypter les mots de passe")
       
