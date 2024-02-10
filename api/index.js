@@ -27,3 +27,15 @@ app.listen(3000, () => {
 
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
+
+// création d'un middleware pour gérer les erreurs dans les requêtes
+// next permet de passer à l'erreur suivante dans la pile d'erreur si il y en a  plusieurs
+app.use((err, req, res, next) => { 
+  const statusCode =  err.statusCode || 500;
+  const message = err.message || "Internal Server Error";
+  res.status(statusCode).json({ 
+    success: false,
+    statusCode,
+    message,
+  });
+});    
