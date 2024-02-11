@@ -1,12 +1,13 @@
-import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Headers from './components/Header'
-import { About, Dashboard, Home, Projects, SignIn, SignUp } from './pages'
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { About, Dashboard, Home, Projects, SignIn, SignUp } from "./pages";
+import { Footer, Header } from "./components";
+
 
 export default function App() {
   return (
     <BrowserRouter>
-    <Headers />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/projects" element={<Projects />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
-  )
+  );
 }
