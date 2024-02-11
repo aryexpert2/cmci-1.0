@@ -27,6 +27,7 @@ app.listen(3000, () => {
 
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/", authRoutes);
 
 // création d'un middleware pour gérer les erreurs dans les requêtes
 // next permet de passer à l'erreur suivante dans la pile d'erreur si il y en a  plusieurs

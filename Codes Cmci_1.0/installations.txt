@@ -57,4 +57,6 @@
         },
         },
     },
+
+# npm install jsonwebtoken ("pour créer des tokens") à la racine du projet
       
