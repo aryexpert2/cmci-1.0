@@ -65,3 +65,5 @@
     export const store = configureStore({
         reducer: {},
     });
+# npm install redux-persist ("pour persister les données dans le local storage")
+    
