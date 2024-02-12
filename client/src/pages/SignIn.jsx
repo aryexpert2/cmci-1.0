@@ -1,13 +1,17 @@
 import { Label, TextInput, Button, Alert, Spinner } from "flowbite-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { signInFailure, signInSuccess, signInStart } from "../redux/user/userSlice";
 
 export default function SignIn() {
 
   const navigate = useNavigate();
   const [formData, setFormData] = useState({});
-  const [errorMessage, setErrorMessage] = useState(null);
-  const [loading, setLoading] = useState(false);
+  // const [errorMessage, setErrorMessage] = useState(null);
+  // const [loading, setLoading] = useState(false);
+  const { loading, error: errorMessage } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() }); 
@@ -19,12 +23,15 @@ export default function SignIn() {
     e.preventDefault(); // evite un rafraichissement de la page qui fera perdre les données du formulaire 
 
     if(!formData.email || !formData.password) {
-      return  setErrorMessage("Please fill in all the fields!");
+      // return  setErrorMessage("Please fill in all the fields!");
+      return dispatch(signInFailure("Please fill in all the fields!")); // redux à la place
     }
 
     try {
-      setLoading(true); // on désactive le bouton pendant le chargement
-      setErrorMessage(null); // on efface le message d'erreur
+      // setLoading(true); // on désactive le bouton pendant le chargement
+      // setErrorMessage(null); // on efface le message d'erreur
+      dispatch(signInStart()); // on utilise redux à la place de setLoading(true) et setErrorMessage(null)
+
       // res est la promesse retournée par fetch pour savoir si la requête va bien se passer ou non
       // on va se servir d'un proxy pour éviter de mettre des URL complètes
       const res = await fetch("/api/auth/signin", {
@@ -36,15 +43,18 @@ export default function SignIn() {
       });
       const data = await res.json(); // on récupère les données de la promesse res sous forme de JSON
       if(data.success === false) {
-        setErrorMessage(data.message); // erreur liée au user
+        // setErrorMessage(data.message); // erreur liée au user
+        dispatch(signInFailure(data.message)); // redux à la place de setErrorMessage(data.message)
       }
-      setLoading(false); // on réactive le bouton après le chargement
+      // setLoading(false); // le bouton est d'ja désactivé dans le signInFailure
       if(res.ok) {
+        dispatch(signInSuccess(data)); // redux à la place de setLoading(false) et setErrorMessage(null)
         navigate("/"); // on redirige l'utilisateur vers la page de connexion
       }
     } catch (error) {
-      setErrorMessage(error.message); // erreur liée au serveur
-      setLoading(false);
+    //  setErrorMessage(error.message); // erreur liée au serveur
+    //  setLoading(false);
+      dispatch(signInFailure(error.message)); // redux à la place de setErrorMessage(error.message) et setLoading(false)
     }
   }
 
