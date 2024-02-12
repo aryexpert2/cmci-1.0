@@ -66,4 +66,7 @@
         reducer: {},
     });
 # npm install redux-persist ("pour persister les données dans le local storage")
+
+# npm install firebase ("pour l'authentification")
+    
     

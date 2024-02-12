@@ -13,9 +13,9 @@ export const signup = async (req, res, next) => {
     email === "" ||
     password === ""
   ) {
-   // return res.status(400).json({ message: "All fields are required" });
-   // on va utiliser le middleware error.js pour gérer les erreurs
-   return next(errorHandler(400, "All fields are required"));
+    // return res.status(400).json({ message: "All fields are required" });
+    // on va utiliser le middleware error.js pour gérer les erreurs
+    return next(errorHandler(400, "All fields are required"));
   }
 
   const salt = bcryptjs.genSaltSync(10);
@@ -28,7 +28,7 @@ export const signup = async (req, res, next) => {
   });
 
   try {
-     await newUser.save();
+    await newUser.save();
     res.status(201).json({ message: "User created successfully" });
   } catch (error) {
     // res.status(500).json({ message: error.message });
@@ -38,7 +38,7 @@ export const signup = async (req, res, next) => {
 };
 
 // ********************************************
-//********************************************* 
+//*********************************************
 
 export const signin = async (req, res, next) => {
   const { email, password } = req.body;
@@ -49,7 +49,7 @@ export const signin = async (req, res, next) => {
 
   // gestion du token avec jwt(java web token)
   try {
-    const validUser = await User.findOne({ email })
+    const validUser = await User.findOne({ email });
 
     if (!validUser) {
       return next(errorHandler(404, "User not found"));
@@ -62,17 +62,54 @@ export const signin = async (req, res, next) => {
     }
 
     //{expiresIn: "1h"}); // on peut ajouter cette option pour définir la durée de validité du token
-    const token = jwt.sign({ id: validUser._id }, process.env.JWT_SECRET); 
+    const token = jwt.sign({ id: validUser._id }, process.env.JWT_SECRET);
 
     //on peut afficher le tocken sans le password à la place de ._doc on peut utiliser .toObject()
     const { password: pass, ...rest } = validUser._doc;
-    
-    // httponly: true permet de rendre le token inaccessible en javascript
-    res.status(200).cookie("access_token", token, {httpOnly: true}).json(rest);
 
+    // httponly: true permet de rendre le token inaccessible en javascript
+    res
+      .status(200)
+      .cookie("access_token", token, { httpOnly: true })
+      .json(rest);
   } catch (error) {
     next(error);
   }
-
 };
 
+// ********************************************
+//*********************************************
+
+export const google = async (req, res, next) => {
+  const { email, name, googlePhotoUrl } = req.body; // on verifie si ces elements sont dans le body de la requête
+  try {
+    const user = await User.findOne({ email });
+    if (user) {
+      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+      const { password, ...rest } = user._doc;
+      res
+        .status(200)
+        .cookie("access_token", token, { httpOnly: true })
+        .json(rest);
+    } else {
+      const generatedPassword =
+        Math.random().toString(36).slice(-8) +
+        Math.random().toString(36).slice(-8);
+      const salt = bcryptjs.genSaltSync(10);
+      const hashedPassword = bcryptjs.hashSync(generatedPassword, salt);
+      const newUser = new User({
+        username:
+          name.toLowerCase().split(" ").join("") +
+          Math.random().toString(9).slice(-4),
+        email,
+        password: hashedPassword,
+        profilePicture: googlePhotoUrl,
+      });
+      await newUser.save();
+      const { password, ...rest } = newUser._doc;
+      res.status(200).cookie("access_token", token, { httpOnly: true }).json(rest);
+    }
+  } catch (error) {
+    next(error);
+  }
+};
