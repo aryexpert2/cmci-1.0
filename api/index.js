@@ -3,6 +3,7 @@ import { mongoose } from "mongoose";
 import dotenv from "dotenv";
 import userRoutes from "./routes/user.route.js";
 import authRoutes from "./routes/auth.route.js";
+import cookieParser from "cookie-parser";
 
 dotenv.config();
 
@@ -19,6 +20,8 @@ mongoose
 const app = express();
 app.use(express.json()); // coe il n'est pas permis d'envoyer des données en format json au server,
                          // on utilise cette méthode pour permettre au server de les lire
+
+app.use(cookieParser()); // on utilise cette méthode pour permettre au server de lire les cookies
 
 // nous avons fait "type": "module", dans le package.json pour corriger le soucis d'imports
 app.listen(3000, () => {
