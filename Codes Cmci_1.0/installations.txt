@@ -68,5 +68,9 @@
 # npm install redux-persist ("pour persister les données dans le local storage")
 
 # npm install firebase ("pour l'authentification")
+
+# npm install --save react-circular-progressbar ("pour les barres de progression circulaires")
+    import { circularProgressbar } from 'react-circular-progressbar';
+    import 'react-circular-progressbar/dist/styles.css';
     
     
