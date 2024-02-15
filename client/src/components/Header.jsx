@@ -80,7 +80,7 @@ export default function Header() {
                 <Dropdown.Item>Profile</Dropdown.Item>
               </Link>   
               <Dropdown.Divider /> 
-                <Dropdown.Item onClick={handleSignOut}>Sign out</Dropdown.Item>
+                <Dropdown.Item className="text-red-600" onClick={handleSignOut}>Sign out</Dropdown.Item>
             </Dropdown>
           ) : (
             <Link to="/sign-in">
