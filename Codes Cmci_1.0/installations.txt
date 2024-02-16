@@ -77,5 +77,10 @@
     dans api/index.js => 
         import cookieParser from 'cookie-parser';
         app.use(cookieParser());
+
+# npm install react-quill --save ("pour l'éditeur de texte") 
+    import ReactQuill from 'react-quill';
+    import 'react-quill/dist/quill.snow.css';
+    
     
     
