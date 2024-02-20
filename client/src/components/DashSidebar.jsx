@@ -68,7 +68,7 @@ export default function DashSidebar() {
           }
           
           <Sidebar.Item onClick={handleSignOut} icon={HiArrowSmRight} className="cursor-pointer">
-            Sign Out
+            <span className="text-red-500">Sign Out</span>
           </Sidebar.Item>
         </Sidebar.ItemGroup>
       </Sidebar.Items>

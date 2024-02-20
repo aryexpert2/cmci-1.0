@@ -20,7 +20,7 @@
 # npm run dev (pour lancer le serveur vite)
 # npm install react-router-dom
 
-# npm i flowbite-react
+# npm intall flowbite-react
     plugins: [
         require('flowbite/plugin'),
     ]
@@ -60,7 +60,7 @@
 
 # npm install jsonwebtoken ("pour créer des tokens") à la racine du projet
 # npm install @reduxjs/toolkit react-redux "installer dans le front pour gérer l'état global de l'application")
-    créer le l'arborescence src/redux/store.js => 
+    créer l'arborescence src/redux/store.js => 
     import { configureStore } from '@reduxjs/toolkit';
     export const store = configureStore({
         reducer: {},
@@ -81,6 +81,12 @@
 # npm install react-quill --save ("pour l'éditeur de texte") 
     import ReactQuill from 'react-quill';
     import 'react-quill/dist/quill.snow.css';
+
+# npm install --save-dev tailwind-scrollbar ("pour les barres de défilement personnalisées")
+    dans tailwind.config.js => 
+        plugins: [
+            require('tailwind-scrollbar'),
+        ]
     
     
     
