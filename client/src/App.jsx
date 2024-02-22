@@ -6,6 +6,7 @@ import {
   CreatePost, 
   Dashboard, 
   Home, 
+  PostPage, 
   Projects, 
   SignIn, 
   SignUp, 
@@ -37,6 +38,7 @@ export default function App() {
           <Route path="/update-post/:postId" element={<UpdatePost />} />
         </Route>
         <Route path="/projects" element={<Projects />} />
+        <Route path="/post/:postSlug" element={<PostPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
