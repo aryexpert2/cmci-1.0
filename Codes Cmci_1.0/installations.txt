@@ -87,6 +87,9 @@
         plugins: [
             require('tailwind-scrollbar'),
         ]
+
+# npm install moment ("pour la gestion du temps écoulé") dans le dossiert front
+    import moment from 'moment';
     
     
     
