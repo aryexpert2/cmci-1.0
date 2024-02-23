@@ -5,3 +5,4 @@ export { default as PrivateRoute } from './PrivateRoute';
 export { default as OnlyAdminPrivateRoute } from './OnlyAdminPrivateRoute';
 export { default as CommentSection } from './CommentSection';
 export { default as ScrollToTop } from './ScrollToTop';
+export { default as PostCard } from './PostCard';

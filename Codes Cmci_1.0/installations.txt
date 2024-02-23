@@ -91,5 +91,11 @@
 # npm install moment ("pour la gestion du temps écoulé") dans le dossiert front
     import moment from 'moment';
     
+
+# npm install -D @tailwindcss/line-clamp ("pour les troncatures de texte")
+    dans tailwind.config.js => 
+        plugins: [  (cette action n'est plus nécessaire pour les new versions de tailwindcss)
+            require('@tailwindcss/line-clamp'), 
+        ]
     
     
