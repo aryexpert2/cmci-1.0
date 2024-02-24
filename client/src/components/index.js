@@ -12,3 +12,4 @@ export { default as DashPosts } from './DashPosts';
 export { default as DashUsers } from './DashUsers';
 export { default as DashComments } from './DashComments';
 export { default as CallToAction } from './CallToAction';
+export { default as DashboardComp } from './DashboardComp';
