@@ -6,6 +6,7 @@ import userRoutes from "./routes/user.route.js";
 import authRoutes from "./routes/auth.route.js";
 import postRoutes from "./routes/post.route.js";
 import commentRoutes from "./routes/comment.route.js";
+import path from "path";
 
 dotenv.config();
 
@@ -19,8 +20,9 @@ mongoose
     console.log(error);
   });
 
+const __dirname = path.resolve(); 
 const app = express();
-app.use(express.json()); // coe il n'est pas permis d'envoyer des données en format json au server,
+app.use(express.json()); // coe il n'est pas permis d'envoyer des doe en format json au server,
                          // on utilise cette méthode pour permettre au server de les lire
 
 app.use(cookieParser()); // on utilise cette méthode pour permettre au server de lire les cookies
@@ -34,7 +36,12 @@ app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/post", postRoutes);
 app.use("/api/comment", commentRoutes);
-//app.use("/api/", authRoutes);
+
+app.use(express.static(path.join(__dirname, "client/dist"))); 
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
 
 // création d'un middleware pour gérer les erreurs dans les requêtes
 // next permet de passer à l'erreur suivante dans la pile d'erreur si il y en a  plusieurs
