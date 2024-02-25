@@ -20,7 +20,7 @@ export default function CallToAction() {
             </Button>
         </div>
         <div className="p-7 flex-1">
-            <img className="h-96 w-96" src="https://www.cmficanada.org/wp-content/uploads/2024/02/image_6483441.jpg" 
+            <img className="h-96 w-full" src="https://www.cmficanada.org/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-17-at-11.44.40.jpeg" 
                 alt="conference: GERE ET JOUIS DE TON HÉRITAGE" 
             />
         </div>
