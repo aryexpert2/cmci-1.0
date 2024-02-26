@@ -40,7 +40,7 @@ export default function FooterCom() {
                   target="_blank" 
                   rel =  "noopener noreferrer"
                 >  
-                    CmCi App
+                  CmCi-App 
                 </Footer.Link>
               </Footer.LinkGroup>
             </div>
@@ -75,9 +75,9 @@ export default function FooterCom() {
         </div>
         <Footer.Divider />
         <div className="w-full sm:flex sm:items-center sm:justify-between">
-            <Footer.Copyright href="#" by="CmCi App" 
-                year={new Date().getFullYear()} 
-            />
+            <Footer.Copyright href="#" by="CmCi App by Ary_Exper"
+                year={new Date().getFullYear()}
+            /> 
             <div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center">
                 <Footer.Icon className="text-teal-700 hover:text-blue-500" href="https://www.facebook.com/cmcimontreal" 
                   icon={BsFacebook} 

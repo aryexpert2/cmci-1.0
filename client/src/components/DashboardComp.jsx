@@ -137,6 +137,7 @@ export default function DashboardComp() {
       </div>
 
       <div className="flex flex-wrap gap-4 py-3 mx-auto justify-center">
+        
         <div
           className="flex flex-col w-full md:w-auto shadow-md p-2 mt-2
                 rounded-md dark:bg-gray-800"
@@ -173,6 +174,7 @@ export default function DashboardComp() {
           </Table>
         </div>
 
+
         <div
           className="flex flex-col w-full md:w-auto shadow-md p-2 mt-2
                 rounded-md dark:bg-gray-800"
@@ -205,6 +207,7 @@ export default function DashboardComp() {
           </Table>
         </div>
 
+
         <div
           className="flex flex-col w-full md:w-auto shadow-md p-2 mt-2
                 rounded-md dark:bg-gray-800"
@@ -235,14 +238,16 @@ export default function DashboardComp() {
                         className="w-14 h-10 rounded-md bg-gray-500"
                       />
                     </Table.Cell>
-                    <Table.Cell className="w-96">{post.title}</Table.Cell>
+                    <Table.Cell className="w-72">{post.title}</Table.Cell>
                     <Table.Cell className="w-5">{post.category}</Table.Cell>
                   </Table.Row>
                 </Table.Body>
               ))}
           </Table>
         </div>
+        
       </div>
+
     </div>
   );
 }
