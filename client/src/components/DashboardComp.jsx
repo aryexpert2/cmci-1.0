@@ -140,7 +140,10 @@ export default function DashboardComp() {
         
         <div
           className="flex flex-col w-full md:w-auto shadow-md p-2 mt-2
-                rounded-md dark:bg-gray-800"
+            rounded-md dark:bg-gray-800
+            table-auto overflow-x-scroll md:mx-auto scrollbar 
+            scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700
+            dark:scrollbar-thumb-slate-500"
         >
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="text-center p-2">Recent Users</h1>
@@ -177,7 +180,10 @@ export default function DashboardComp() {
 
         <div
           className="flex flex-col w-full md:w-auto shadow-md p-2 mt-2
-                rounded-md dark:bg-gray-800"
+              rounded-md dark:bg-gray-800
+              table-auto overflow-x-scroll md:mx-auto scrollbar 
+            scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700
+            dark:scrollbar-thumb-slate-500"
         >
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="text-center p-2">Recent Comments</h1>
@@ -210,7 +216,10 @@ export default function DashboardComp() {
 
         <div
           className="flex flex-col w-full md:w-auto shadow-md p-2 mt-2
-                rounded-md dark:bg-gray-800"
+            rounded-md dark:bg-gray-800
+            table-auto overflow-x-scroll md:mx-auto scrollbar 
+            scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700
+            dark:scrollbar-thumb-slate-500"
         >
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="text-center p-2">Recent Posts</h1>
@@ -238,7 +247,7 @@ export default function DashboardComp() {
                         className="w-14 h-10 rounded-md bg-gray-500"
                       />
                     </Table.Cell>
-                    <Table.Cell className="w-72">{post.title}</Table.Cell>
+                    <Table.Cell className="w-72 line-clamp-2">{post.title}</Table.Cell>
                     <Table.Cell className="w-5">{post.category}</Table.Cell>
                   </Table.Row>
                 </Table.Body>

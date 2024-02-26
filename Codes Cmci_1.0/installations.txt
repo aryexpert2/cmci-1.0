@@ -88,6 +88,10 @@
             require('tailwind-scrollbar'),
         ]
 
+        (table-auto overflow-x-scroll md:mx-auto scrollbar 
+            scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700
+            dark:scrollbar-thumb-slate-500)
+
 # npm install moment ("pour la gestion du temps écoulé") dans le dossiert front
     import moment from 'moment';
     
