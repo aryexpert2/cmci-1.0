@@ -33,7 +33,7 @@ export default function FooterCom() {
                   target="_blank" 
                   rel =  "noopener noreferrer"
                 >  
-                    100 JS Projects
+                    100 JESUS Projects
                 </Footer.Link>
                 <Footer.Link 
                   href="/about" 
@@ -79,11 +79,13 @@ export default function FooterCom() {
                 year={new Date().getFullYear()} 
             />
             <div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center">
-                <Footer.Icon href="#" icon={BsFacebook} />
-                <Footer.Icon href="#" icon={BsInstagram} />
-                <Footer.Icon href="#" icon={BsTwitter} />
-                <Footer.Icon href="https://github.com/aryexpert2" icon={BsGithub} />
-                <Footer.Icon href="#" icon={BsDribbble} />
+                <Footer.Icon className="text-teal-700 hover:text-blue-500" href="https://www.facebook.com/cmcimontreal" 
+                  icon={BsFacebook} 
+                />
+                <Footer.Icon href="#" icon={BsInstagram} className="text-teal-700 hover:text-blue-500" />
+                <Footer.Icon href="#" icon={BsTwitter} className="text-teal-700 hover:text-blue-500" />
+                <Footer.Icon href="https://github.com/aryexpert" icon={BsGithub} className="text-teal-700 hover:text-blue-500" />
+                <Footer.Icon href="#" icon={BsDribbble} className="text-teal-700 hover:text-blue-500" />
             </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { Button, Dropdown, Navbar, TextInput, Avatar } from "flowbite-react";
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
@@ -50,6 +50,10 @@ export default function Header() {
       navigate(`/search?${searchQuery}`);
     }
 
+    const handleNavigate = () => {
+      navigate(`/search?searchTerm=${searchTerm}`);
+    }
+
   return (
     <Navbar className="border-b-2">
       <Link
@@ -75,11 +79,11 @@ export default function Header() {
             onChange={(e) => setSearchTerm(e.target.value)}
         />
       </form>
-      <Button className="w-12 h-10 lg:hidden" color="gray" pill>
+      <Button onClick={handleNavigate} className="w-12 h-10 lg:hidden" color="gray" pill>
         <AiOutlineSearch />
       </Button>
       <div className="flex gap-2 md:order-2">
-        <Button className="w-12 h-10 hidden sm:inline" color="gray" 
+        <Button className="w-12 h-10" color="gray" 
           pill onClick={()=> dispatch(toggleTheme())}
         >
           {theme === "light" ? <FaSun /> : <FaMoon />}

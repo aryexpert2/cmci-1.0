@@ -98,4 +98,6 @@
             require('@tailwindcss/line-clamp'), 
         ]
     
-    
+# faire des modifs dans le fichier index et json backend ensuite utiliser le site render 
+# https://www.youtube.com/watch?v=Kkht2mwSL_I&t=34s&ab_channel=React%26NextjsProjectswithSahand
+# https://github.com/sahandghavidel/mern-blog/commits

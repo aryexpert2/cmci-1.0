@@ -11,16 +11,16 @@ export default function CallToAction() {
                 Want to learn more about Jesus?
             </h2>
             <p className='text-gray-500 my-2'> 
-                Checkout these resources with 100 Jesus stories
+                Checkout these resources of CmCi and Jesus stories
             </p>
             <Button gradientDuoTone="purpleToPink" className='rounded-tl-xl rounded-bl-none'>
                 <a href="https://www.cmficanada.org/" target="_blank" rel='noopener noreferrer'>
-                100 Jesus stories
+                    Visit CmCi Canada
                 </a>
             </Button>
         </div>
         <div className="p-7 flex-1">
-            <img className="h-96 w-full" src="https://www.cmficanada.org/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-17-at-11.44.40.jpeg" 
+            <img className="h-96 w-full" src="https://img.freepik.com/photos-gratuite/priere-crise-vie-chretienne-dieu_1150-12938.jpg?t=st=1708909841~exp=1708913441~hmac=f2117e19c3ab9b74d8358757fac3808a2f1e9c7c211b6b31fe43a8661713f74b&w=740" 
                 alt="conference: GERE ET JOUIS DE TON HÉRITAGE" 
             />
         </div>

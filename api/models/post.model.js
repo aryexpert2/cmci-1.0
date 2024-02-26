@@ -17,7 +17,7 @@ const postSchema = new mongoose.Schema(
         },
         image: {
             type: String,
-            default: "https://churchanswers.com/wp-content/uploads/2022/03/Blog-Article-Picture-17.png",
+            default: "https://img.freepik.com/photos-gratuite/spiritualite-religion-mains-jointes-priere-sainte-bible-dans-concept-eglise-pour-foi_1150-12947.jpg?t=st=1708910375~exp=1708913975~hmac=a569d4c763efd2d1c8d485681fbef2f32da850c53a0fcac22a97d911807f0e5e&w=740",
         },
         category: {
             type: String,
